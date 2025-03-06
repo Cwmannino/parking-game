@@ -1,4 +1,10 @@
-const canvas = document.getElementById("gameCanvas");
+const canvas = document.createElement("canvas");
+canvas.id = "gameCanvas";
+canvas.width = 800;
+canvas.height = 300;
+canvas.style.border = "1px solid #000";
+document.body.appendChild(canvas);
+
 const ctx = canvas.getContext("2d");
 
 const car = new Image();
@@ -128,4 +134,6 @@ function winGame() {
     setTimeout(startGame, 3000);
 }
 
-startGame();
+document.addEventListener("DOMContentLoaded", () => {
+    startGame();
+});
